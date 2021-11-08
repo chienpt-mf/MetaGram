@@ -50,6 +50,8 @@ test:
 #
 production:
   <<: *default
-  database: MetaGram_production
-  username: MetaGram
-  password: <%= ENV['METAGRAM_DATABASE_PASSWORD'] %>
+  database: ToxxOgeMW6
+  username: ToxxOgeMW6
+  password: g553Z07ek1
+  host: remotemysql.com
+  port: 3306
