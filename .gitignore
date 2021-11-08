@@ -34,4 +34,7 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
-./Gemfile.lock
+/Gemfile.lock
+/test/
+# Ignore application configuration
+/config/application.yml
