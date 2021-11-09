@@ -3,7 +3,7 @@ class PostsController < ApplicationController
     before_action :find_post, only: [:show, :destroy]
   
     def index
-      @posts = Post.all.limit(10).includes(:photos)
+      @posts =  Post.eager_load(:photos, :user).recent_post.limit 10
       @post = Post.new
     end
   
