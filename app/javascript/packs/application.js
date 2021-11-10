@@ -14,3 +14,6 @@ global.toastr = require("toastr")
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+require ("../upload_post_images")
+require ("../preview_image")

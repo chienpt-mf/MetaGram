@@ -1,0 +1,39 @@
+<% @posts.each do |post| %>
+  <div class="card mt-3 post">
+    <div class="card-header d-flex align-items-center">
+      
+    <%= link_to "#", class: "normal-color no-text-decoration", title: post.user.name do %>
+      <strong><%= post.user.name %></strong>
+    <% end %>
+    <% if post.is_belongs_to? current_user %>
+        <%= link_to post_path(post), method: :delete, class: "ml-auto delete-post-icon mx-0 my-auto" do %>
+          <i class="far fa-trash-alt" aria-hidden="true"></i>
+        <% end %>
+    <% end %>
+    </div>
+
+    <%= render "photos", {post: post} %>
+
+    <div class="card-body" >
+    <div class="row actions pb-1">
+      <%= link_to "#", class:"core-sprite love hide-text" do %><i class="far fa-heart fa-lg"></i><% end %>&emsp;
+      <%= link_to "#", class:"core-sprite comment hide-text" do %><i class="far fa-comment fa-lg"></i><% end %>
+      <%= link_to "#", class:"core-sprite bookmark hide-text ml-auto" do %><i class="far fa-bookmark fa-lg"></i><% end %>
+    </div>
+    <div><strong><%= pluralize(16,"like") %></strong></div>
+    <div>
+      <span><strong><%= post.user.name%></strong></span>
+      <span><%= post.content %></span>
+    </div>
+    <div class="light-color post-time"><%= time_ago_in_words(post.created_at).upcase %> AGO </div>
+    <hr>
+    <div class="row actions">
+      <form action="#" class="w-100">
+        <div>
+          <textarea class="form-control comment-input border-0" placeholder="Add a comment ..." rows="1"></textarea>
+        </div>
+      </form>
+    </div>
+  </div>
+  </div>
+<% end %>
