@@ -1,7 +1,4 @@
 $(document).ready(function () {
-  if (!window.location.href.includes("/posts"))
-    return;
-
   function readURL(input) {
     if (input.files) {
       [...input.files].forEach(function (imageFile){
