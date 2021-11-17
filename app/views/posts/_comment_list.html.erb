@@ -1,0 +1,13 @@
+<% comments.each do |comment| %>
+  <div class="my-2">
+    <% if comment.user == current_user %>
+      <%= link_to "Delete comment", comment_path(comment), method: :delete, remote: true, class: "core-sprite delete-comment hide-text" %>
+    <% end %>
+    <span>
+      <strong>
+        <%= link_to comment.user.name, "#", class: "no-text-decoration normal-color" %>
+      </strong>
+    </span>
+    <span><%= comment.content %></span>
+  </div>
+<% end %>
