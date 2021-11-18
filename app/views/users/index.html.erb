@@ -1,0 +1,10 @@
+<div class="col-md-6 offset-md-3 mt-5">
+  <strong>Suggested</strong>
+  <div class="card mt-3">
+    <div class="card-body">
+      <% @users.each do |user| %>
+        <%= render "suggest_follow_list", user: user %>
+      <% end %>
+    </div>
+  </div>
+</div>
