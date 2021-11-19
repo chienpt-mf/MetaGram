@@ -27,7 +27,6 @@
       </div>
       &emsp;
       <%= link_to "#", class:"core-sprite comment hide-text" do %><i class="far fa-comment fa-lg"></i><% end %>
-      <%= link_to "#", class:"core-sprite bookmark hide-text ml-auto" do %><i class="far fa-bookmark fa-lg"></i><% end %>
     </div>
     <div id="like-text-post-<%= post.id.to_s %>">
       <%= render "like_text", {likes: post.likes_sort_by_created_at} if post.likes.present? %>

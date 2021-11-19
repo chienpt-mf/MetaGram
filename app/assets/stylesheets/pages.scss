@@ -50,3 +50,28 @@ body {
 .nav-item:not(:first-child) {
   margin-left: 30px
 }
+
+.metagram-font-header{
+  font-family: cursive;
+  font-size: 1.5rem;
+  color: black;
+
+  &:hover {
+    text-decoration: none !important;
+  }
+}
+
+.metagram-login{
+  font-family: cursive;
+  font-size: 1.8rem;
+  color: black;
+
+  &:hover {
+    text-decoration: none !important;
+  }
+}
+
+.logout-icon {
+  margin-top: -13px;
+  font-size: 1.4rem;
+}
