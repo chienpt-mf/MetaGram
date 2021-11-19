@@ -19,6 +19,11 @@
         <li class="nav-item">
           <%= link_to "Profile", user_path(current_user), class: "nav-link core-sprite profile-icon hide-text" %>
         </li>
+        <li class="nav-item">
+          <%= link_to destroy_user_session_path, method: :delete, class:"nav-link" do %>
+            <i class="fal fa-arrow-alt-circle-right"></i>
+          <% end %>
+        </li>
       </ul>
     </div>
   </div>

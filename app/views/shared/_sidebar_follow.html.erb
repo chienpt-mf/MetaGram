@@ -1,0 +1,40 @@
+<div class="position-fixed">
+  <div class="row">
+    <div class="col-4 pr-2">
+      <%= link_to user_path(current_user), class: "no-text-decoration" do %>
+        <%= image_tag avatar_url(current_user ), width: '70', height: '70', class: "round-img" %>
+      <% end %>
+    </div>
+
+    <div class="col-6">
+      <div class="row">
+        <strong>
+          <%= link_to current_user.name, user_path(current_user), class: "no-text-decoration normal-color" %>
+        </strong>
+      </div>
+      <div class="row">
+        <p class="email"><%= current_user.email %></p>
+      </div>
+    </div>
+
+    <div class="col-2 text-primary">
+      
+      <strong>
+        <%= link_to "Switch", destroy_user_session_path, method: :delete, class: "no-text-decoration normal-color" %>
+      </strong>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-9 text-secondary">
+      <strong>Suggestions For You</strong>
+    </div>
+    <div class="col-3">
+      <strong><%= link_to "See all", users_path, class: "no-text-decoration normal-color" %></strong>
+    </div>
+  </div>
+  <div>
+    <%= render "shared/suggest_follow" %>
+  </div>
+</div>
+</div>
