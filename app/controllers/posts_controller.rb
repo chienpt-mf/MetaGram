@@ -9,6 +9,11 @@ class PostsController < ApplicationController
   
     def create
       @post = current_user.posts.build(post_params)
+      if params[:images].nil?
+        flash[:alert] = "Posts must have pictures"
+        redirect_to posts_path
+        return
+      end
       if @post.save
         if params[:images]
           params[:images].each do |img|

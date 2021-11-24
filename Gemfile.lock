@@ -100,8 +100,6 @@ GEM
       warden (~> 1.2.3)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
-    dropzonejs-rails (0.8.5)
-      rails (> 3.1)
     erubi (1.10.0)
     ffi (1.15.4)
     figaro (1.2.0)
@@ -282,7 +280,6 @@ DEPENDENCIES
   carrierwave (~> 2.0)
   cloudinary
   devise
-  dropzonejs-rails
   figaro
   font-awesome-sass
   jbuilder (~> 2.7)
