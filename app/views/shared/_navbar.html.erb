@@ -7,12 +7,21 @@
 
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <form class="form-inline my-2 my-lg-0 ml-md-auto">
-        <input class="form-control mr-sm-2 text-center" type="search" placeholder="Search" aria-label="Search">
-      </form>
+      <%= form_tag users_path, method: :get, class: "form-inline my-2 my-lg-0 ml-md-auto", id: "users-search" do %>
+        <%= text_field_tag :search, params[:search], class: "form-control mr-sm-2 text-center common-btn",
+          placeholder: "Search", autocomplete: "off" %>
+      <% end %>
+
       <ul class="navbar-nav ml-md-auto">
         <li class="nav-item">
-          <%= link_to "Profile", user_path(current_user), class: "nav-link core-sprite profile-icon hide-text" %>
+          <%= link_to root_path, class: "nav-link logout-icon" do %>
+            <i class="fas fa-home"></i>
+          <% end %>
+        </li>
+        <li class="nav-item">
+          <%= link_to user_path(current_user), class: "nav-link logout-icon" do %>
+            <i class="fas fa-user-circle"></i>
+          <% end %>
         </li>
         <li class="nav-item">
           <%= link_to destroy_user_session_path, method: :delete, class:"nav-link logout-icon" do %>

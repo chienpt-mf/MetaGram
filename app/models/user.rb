@@ -39,4 +39,12 @@ class User < ApplicationRecord
     following_ids = "SELECT followed_id FROM relationships WHERE follower_id = :user_id"
     User.where("id NOT IN (#{following_ids})", user_id: id)
   end
+
+  def self.search(term)
+    if term
+      where('name LIKE ?', "%#{term}%")
+    else
+      nil
+    end
+  end
 end
