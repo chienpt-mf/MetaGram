@@ -3,7 +3,7 @@ class PostsController < ApplicationController
     before_action :find_post, only: [:show, :destroy]
   
     def index
-      @posts = Post.eager_load(:photos, :user, likes: :user, comments: :user).recent_post.limit 10
+      @posts = Post.eager_load(:photos, :user, likes: :user, comments: :user).page(params[:page]).per(5)
       @post = Post.new
     end
   
