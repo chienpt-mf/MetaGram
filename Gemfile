@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.4'
 
 gem 'bootsnap', '>= 1.4.4', require: false
+gem "bootstrap4-kaminari-views", "~> 1.0.1"
 gem 'carrierwave', '~> 2.0'
 gem 'cloudinary'
 gem 'devise'

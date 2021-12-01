@@ -40,6 +40,7 @@
       </div>
       <div id="posts">
         <%= render 'posts_list' %>
+        <div class="mt-5 d-flex justify-content-center"><%= paginate @posts, theme: 'twitter-bootstrap-4'%> </div>
       </div>
     </div>
 
