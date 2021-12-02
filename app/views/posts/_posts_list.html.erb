@@ -4,7 +4,7 @@
       <%= link_to user_path(post.user), class: "no-text-decoration" do %>
         <%= image_tag avatar_url(post.user), class: "post-author-icon" %>
       <% end %> 
-      <%= link_to "#", class: "normal-color no-text-decoration", title: post.user.name do %>
+      <%= link_to user_path(post.user), class: "normal-color no-text-decoration", title: post.user.name do %>
         <strong><%= post.user.name %></strong>
       <% end %>
       <% if post.is_belongs_to? current_user %>
@@ -32,7 +32,9 @@
       <%= render "like_text", {likes: post.likes_sort_by_created_at} if post.likes.present? %>
     </div>
     <div>
-      <span><strong><%= post.user.name%></strong></span>
+      <%= link_to user_path(post.user), class: "normal-color no-text-decoration", title: post.user.name do %>
+        <strong><%= post.user.name %></strong>
+      <% end %>
       <span><%= post.content %></span>
     </div>
     <div id="comment-post-<%= post.id.to_s %>">
